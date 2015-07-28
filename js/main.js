@@ -8,7 +8,7 @@ var ractive = new Ractive({
     paintItem: false,
     items: {
       'dormir': {color: 'darkblue', background: 'nightsky'},
-      'comer': {color: 'sandybrown'},
+      'comer': {color: 'sandybrown', background: 'comer'},
       'deberes': {color: 'bisque'},
       'jugar': {color: 'greenyellow'},
       'maquinas': {color: 'lightseagreen'},
