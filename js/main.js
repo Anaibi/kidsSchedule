@@ -4,9 +4,10 @@ var ractive = new Ractive({
   data: {
     hour: [],
     paintColor: 'white',
+    paintBg: '',
     paintItem: false,
     items: {
-      'dormir': {color: 'darkblue'},
+      'dormir': {color: 'darkblue', background: 'nightsky'},
       'comer': {color: 'sandybrown'},
       'deberes': {color: 'bisque'},
       'jugar': {color: 'greenyellow'},
@@ -25,11 +26,19 @@ for (var i=0; i<24;i++) {
 ractive.set('hour', hour);
 
 ractive.on({
-  'saveColor': function(event, color) { 
-    ractive.set('paintColor', color);
+  'saveColor': function(event, color, background) { 
+    if (background) { 
+      ractive.set('paintBg', background);
+    } else {
+      ractive.set('paintColor', color);
+    }
   },
-  'paint': function(event) {
-    var color = ractive.get('paintColor');
-    $(event.original.target).css('background-color', color);
+  'paint': function(event) { 
+    var bg = ractive.get('paintBg');
+    if (bg) {
+      $(event.original.target).addClass(bg);
+    } else {
+      $(event.original.target).css('background-color', ractive.get('paintColor'));
+    }
   }
 });

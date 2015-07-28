@@ -48,4 +48,8 @@ table {
   .leyenda tr:hover {
     cursor: copy; }
 
+.nightsky {
+  background: url("nightsky.jpg") no-repeat;
+  background-size: cover; }
+
 /*# sourceMappingURL=style.css.map */

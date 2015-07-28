@@ -26,7 +26,7 @@
 
   <table class="leyenda">
     {{#each items:item}}
-      <tr on-click="saveColor:{{color}}"><td style="background-color: {{color}}">{{item}}</td></tr>
+      <tr on-click="saveColor:{{color}},{{background}}"><td class="{{background}}" style="background-color: {{color}}">{{item}}</td></tr>
     {{/each}}
   </table>
 
