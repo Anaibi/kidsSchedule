@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=0.1">
+  <title>calendario</title>
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  
+  <div id="ractive-container"></div>
+  
+  <script id="template" type="text/ractive">
+  <table class="mes">
+    <tr><th>Lunes</th><th>Martes</th><th>Miercoles</th><th>Jueves</th><th>Viernes</th></tr>
+  </table>
+
+  <div class="resizable">
+    <table class="dia">
+      <tr><th>hora</th><th colspan="2">Lunes</th></tr>
+      {{#each hour}}
+        <tr><th class="hour">{{this}}</th><td on-click="paint"></td><td class="dia-yo" on-click="paint"></td></tr>
+      {{/each}}
+    </table>
+  </div>
+
+  <table class="leyenda">
+    {{#each items:item}}
+      <tr on-click="saveColor:{{color}}"><td style="background-color: {{color}}">{{item}}</td></tr>
+    {{/each}}
+  </table>
+
+  </script>
+  
+  <script src="http://cdn.ractivejs.org/latest/ractive.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+
