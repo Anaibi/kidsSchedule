@@ -27,16 +27,18 @@ ractive.set('hour', hour);
 
 ractive.on({
   'saveColor': function(event, color, background) { 
-    if (background) { 
+    if (background) { console.log('has bg');
       ractive.set('paintBg', background);
-    } else {
+      ractive.set('paintItem', true);
+    } else { console.log('has color');  
       ractive.set('paintColor', color);
     }
   },
   'paint': function(event) { 
     var bg = ractive.get('paintBg');
-    if (bg) {
+    if (bg && ractive.get('paintItem')) {
       $(event.original.target).addClass(bg);
+      ractive.toggle('paintItem');
     } else {
       $(event.original.target).css('background-color', ractive.get('paintColor'));
     }
