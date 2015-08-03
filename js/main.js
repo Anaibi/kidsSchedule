@@ -9,11 +9,13 @@ var ractive = new Ractive({
     items: {
       'dormir': {color: 'darkblue', background: 'nightsky'},
       'comer': {color: 'sandybrown', background: 'comer'},
-      'deberes': {color: 'bisque'},
+      'deberes': {color: 'khaki'},
       'jugar': {color: 'greenyellow'},
-      'maquinas': {color: 'lightseagreen'},
+      'maquinas': {color: 'darkred'},
       'salir': {color: 'darkgreen'},
-      'trabajar': {color: 'aquamarine'}
+      'trabajar': {color: 'aquamarine'},
+      'duchar': {color: 'tomato'},
+      'dientes': {color: 'red'},
     }
   }
 });
